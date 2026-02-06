@@ -10,20 +10,20 @@ The analysis combines **exploratory data analysis (EDA)** with **Bayesian change
 
 Project Structure
 -----------------
-```
+``` bash
 brent-oil-analysis/
 │
 ├── data/
 │   ├── raw/
-│   │   └── BrentOilPrices.csv         # Historical Brent oil prices
+│   │   └── BrentOilPrices.csv         # Historical Brent oil 
 │   └── events/
-│       └── oil_market_events.csv      # Key geopolitical/economic events
-│
+│       └── oil_market_events.csv      # Key geopolitical/
 ├── notebooks/
-│   ├── task1_analysis_plan.md         # Workflow, assumptions, and event mapping
-│   └── 02_eda_time_series.ipynb       # EDA of Brent prices and log returns
-│
-├── README.md                           # Project overview and instructions
+│   ├── 02_eda_time_series.ipynb  
+│   ├── README.md # Project overview and instructions
+├── reports/
+│   └── task1_analysis_plan.md  # EDA of Brent prices and log returns
+├── README.md                           
 └── requirements.txt                    # Python packages needed 
 ```
 
