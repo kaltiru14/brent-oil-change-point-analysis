@@ -1,0 +1,16 @@
+date,event,category,description
+1990-08-02,Gulf War Begins,Geopolitical Conflict,Iraq invades Kuwait causing major disruption to oil supply
+2003-03-20,Iraq War Begins,Geopolitical Conflict,US-led invasion affecting Middle East oil production
+2008-09-15,Global Financial Crisis,Economic Shock,Collapse of Lehman Brothers triggering global recession and oil demand collapse
+2010-12-17,Arab Spring Begins,Geopolitical Conflict,Political unrest across Middle East and North Africa impacting oil markets
+2011-02-15,Libyan Civil War,Geopolitical Conflict,Severe disruption of Libyan oil exports
+2014-11-27,OPEC Maintains Production,OPEC Decision,OPEC decides not to cut production leading to price collapse
+2016-01-16,Iran Sanctions Lifted,Sanctions,Iran re-enters global oil markets increasing supply
+2016-11-30,OPEC Production Cut Agreement,OPEC Decision,Coordinated production cuts by OPEC and allies
+2018-05-08,US Withdraws from Iran Nuclear Deal,Sanctions,Reimposition of sanctions on Iranian oil exports
+2019-09-14,Saudi Aramco Drone Attack,Geopolitical Conflict,Temporary shutdown of Saudi oil production facilities
+2020-03-11,COVID-19 Declared Pandemic,Global Demand Shock,Global lockdowns cause unprecedented oil demand collapse
+2020-04-12,OPEC+ Historic Production Cut,OPEC Decision,Largest coordinated production cut in history
+2021-03-23,Suez Canal Blockage,Supply Chain Disruption,Temporary halt in global oil shipments
+2022-02-24,Russia Invades Ukraine,Geopolitical Conflict,Major geopolitical shock affecting global energy markets
+2022-03-08,US Bans Russian Oil Imports,Sanctions,Reduced Russian oil supply to global markets
