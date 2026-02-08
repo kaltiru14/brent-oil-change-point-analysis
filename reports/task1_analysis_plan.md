@@ -439,3 +439,7 @@ While change point models are powerful, they have important limitations:
 *   The focus is on **informing decisions, supporting scenario analysis, and highlighting potential risk periods**.
     
 *   Combining detected change points with real-world events helps stakeholders understand **plausible drivers of price shifts**, while remaining aware of uncertainty.
+
+9\. Event Dataset Integration
+----------------------------
+A structured event dataset (`oil_market_events.csv`) is used to contextualize detected change points. Each event includes a date, category, and description. After identifying change points from the Brent oil price time series, detected dates will be compared with event dates using temporal proximity (e.g., within ±30 days) to identify plausible associations between statistical breaks and real-world events. This comparison enables interpretive analysis while acknowledging uncertainty and potential overlap between events.
