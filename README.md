@@ -77,4 +77,94 @@ brent-oil-analysis/
 ### Contributing
 - Open GitHub issues for bugs, improvements, or feature requests.
 - Keep exploratory work in notebooks/.
-- Maintain reports and final deliverables in reports/.
+- Maintain reports and final deliverables in reports
+
+Task 2: Change Point Modeling and Insight Generation
+====================================================
+
+Objective
+---------
+
+The objective of Task 2 is to apply **Bayesian change point detection** to identify and quantify structural breaks in Brent oil prices. The analysis aims to detect regime shifts in the price dynamics, quantify their impact, and relate detected changes to major geopolitical and economic events.
+
+Data Description
+----------------
+
+*   **Dataset:** Brent crude oil prices    
+*   **Frequency:** Daily data aggregated to **monthly averages**    
+*   **Variables:**    
+    *   Date: Observation date        
+    *   Price: Brent oil price (USD)       
+
+### Why Monthly Aggregation?
+Monthly aggregation was applied to:
+*   Reduce high-frequency noise    
+*   Improve stationarity of returns    
+*   Ensure computational feasibility of Bayesian change point inference with a discrete change point parameter   
+
+This approach is standard in macroeconomic and energy market analysis.
+
+Methodology
+-----------
+### 1\. Data Preparation and Exploratory Data Analysis (EDA)
+*   Converted the Date column to datetime format and sorted the data chronologically    
+*   Plotted the monthly Brent oil price series to identify long-term trends, shocks, and volatility    
+*   rt=log⁡(Pt)−log⁡(Pt−1)r\_t = \\log(P\_t) - \\log(P\_{t-1})rt​=log(Pt​)−log(Pt−1​)    
+*   Visualized log returns to observe volatility clustering and regime behavior  
+
+### 2\. Bayesian Change Point Model
+A Bayesian change point model was implemented using **PyMC** to detect a structural break in the mean of the return series.
+#### Model Specification
+*   **Change Point (τ):**    
+    *   τ ~ DiscreteUniform(0, n−1)        
+*   **Before and After Regimes:**    
+    *   μ₁, μ₂ ~ Normal(0, σ)        
+*   **Volatility:**
+    *   σ ~ HalfNormal
+*   **Switching Mechanism:**
+    *   A hard switch using pm.math.switch assigns the appropriate mean depending on whether the time index is before or after τ
+*   **Likelihood:**
+    *   Returns are modeled using a Normal distribution
+### 3\. Inference and Diagnostics
+*   MCMC sampling performed using pm.sample() 
+*   Convergence assessed using:
+    *   Posterior summaries (r\_hat values)
+    *   Trace plots
+*   Posterior distribution of τ analyzed to determine the most probable change point
+### 4\. Impact Quantification
+*   Compared posterior means of μ₁ and μ₂
+*   Quantified the magnitude of the regime shift as a percentage change in average log returns
+*   Interpreted results probabilistically rather than causally
+### 5\. Event Association
+Detected change point dates were compared with a curated list of major oil market events, including:
+*   OPEC production decisions
+*   Global financial crises
+*   Geopolitical conflicts
+*   Pandemic-related demand shocks
+Associations are presented as **hypotheses**, acknowledging that statistical change points do not prove causality.
+
+Results
+-------
+
+*   The model identifies a statistically significant structural break in the Brent oil return series
+*   The detected change corresponds to a notable shift in average returns
+*   The timing aligns closely with major real-world oil market events, suggesting a plausible economic interpretation
+
+Limitations
+-----------
+
+*   Monthly aggregation may smooth short-lived shocks  
+*   The model assumes constant volatility across regimes
+*   Change point detection identifies **correlation in time**, not causal impact
+
+Conclusion
+----------
+
+Task 2 successfully demonstrates the application of Bayesian change point modeling to oil price data. The analysis provides interpretable insights into regime shifts in the Brent oil market and establishes a strong foundation for further multivariate or regime-switching extensions.
+
+Files Included
+--------------
+
+*   Jupyter notebook with full analysis and visualizations
+*   Posterior plots and diagnostics
+*   Event comparison and interpretation
