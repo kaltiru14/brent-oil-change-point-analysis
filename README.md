@@ -168,3 +168,133 @@ Files Included
 *   Jupyter notebook with full analysis and visualizations
 *   Posterior plots and diagnostics
 *   Event comparison and interpretation
+
+Absolutely! Here's a clear and professional **README** tailored for **Task 3: Developing an Interactive Dashboard for Data Analysis Results**. You can place this in the root of your project (e.g., README.md).
+
+Task 3- Brent Oil Price Dashboard
+==================================
+
+Overview
+--------
+
+This project implements an **interactive dashboard** to visualize Brent oil price trends, detect structural changes, and explore correlations with major market events. The dashboard helps stakeholders analyze historical price movements and understand the impact of political decisions, conflicts, and economic sanctions on oil prices.
+
+**Technologies Used:**
+*   Backend: Flask (Python)
+*   Frontend: React.js
+*   Data visualization: Recharts
+*   Data manipulation: Pandas, NumPy
+
+Features
+--------
+
+### Historical Trends
+*   View Brent oil price data over time.
+*   Highlight structural breaks detected via change point analysis.
+### Event Correlation
+
+*   Visualize market events and their temporal proximity to significant price changes.
+*   Option to toggle event markers on/off.
+### Indicators
+*   Display key indicators:
+    
+    *   Annualized volatility of Brent oil prices.  
+    *   Average price change around major market events.       
+
+### Interactive Filters
+
+*   **Date range selection:** Filter both price data and events by start and end dates. 
+*   **Event toggle:** Show or hide market events on the chart.
+*   **Reset button:** Quickly restore full date range.
+
+### Insights
+
+*   Highlights significant change points with nearby events.  
+*   Displays possible drivers of price movements in an insight box.
+
+Project Structure
+-----------------
+```bash
+brent-oil-change-point-analysis/
+├─ backend/
+│  ├─ app.py                # Flask backend serving APIs
+│  ├─ requirements.txt      # Python dependencies
+│  └─ data/
+│     ├─ raw/
+│     │  └─ BrentOilPrices.csv
+│     └─ oil_market_events.csv
+├─ frontend/
+│  ├─ src/
+│  │  ├─ components/
+│  │  │  ├─ Dashboard.jsx
+│  │  │  ├─ PriceChart.jsx
+│  │  │  ├─ IndicatorCards.jsx
+│  │  │  └─ InsightBox.jsx
+│  │  └─ App.js
+│  ├─ package.json
+│  └─ public/
+└─ README.md
+```
+
+Setup Instructions
+------------------
+
+### Backend (Flask)
+1.  Navigate to the backend directory:
+
+```bash 
+cd backend
+```
+
+1.  Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+1.  Run the Flask server:
+```bash
+python app.py
+```
+The backend API will be available at http://127.0.0.1:5000.
+
+### Frontend (React)
+
+1.  Navigate to the frontend directory:
+```bash
+cd frontend
+```
+1.  Install dependencies:
+```bash
+npm install
+```
+1.  Start the React development server:
+```bash
+npm start 
+```
+
+The dashboard will be available at http://localhost:3000.
+
+API Endpoints
+-------------
+
+EndpointDescription/api/pricesReturns historical Brent oil price data/api/eventsReturns market events with date, category, and description/api/change-pointReturns the main detected change point/api/indicatorsReturns key indicators: volatility, average price change around events
+
+Usage
+-----
+
+1.  Open the dashboard in a web browser: http://localhost:3000. 
+2.  Use the **Start Date** and **End Date** filters to select a specific range.   
+3.  Toggle **Show Events** to visualize or hide market events.
+4.  Hover over the price chart to view exact price points.
+5.  Review the **Insight Box** for key insights around change points.
+6.  Review **Indicator Cards** for volatility and average price change metrics.
+
+### Screenshots
+
+**Dashboard Overview:**
+![Dashboard Overview](docs/screenshots/dashboard_overview.png)
+
+**Indicator Cards and Insight Box:**
+![Indicators](docs/screenshots/indicators_insights.png)
+
+**Date Filters and Event Toggle:**
+![Filters](docs/screenshots/filters.png)

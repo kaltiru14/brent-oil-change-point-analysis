@@ -141,12 +141,10 @@ const Dashboard = () => {
       />
 
       {/* Insights */}
-      {changePoint && (
-        <InsightBox
-          changePoint={changePoint?.date ?? changePoint}
-          events={filteredEvents}
-        />
-      )}
+     {changePoint && (
+    <InsightBox changePoint={changePoint} events={filteredEvents} />
+    )}
+
     </div>
   );
 };
